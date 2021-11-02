@@ -11,14 +11,16 @@
     "@expo-google-fonts/work-sans": "^0.2.0",
     "@react-native-community/hooks": "^2.6.0",
     "expo": "~42.0.1",
+    "expo-app-loading": "1.1.2",
     "expo-font": "~9.2.1",
     "expo-linear-gradient": "~9.2.0",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-paper": "^4.9.2",
     "react-native-web": "~0.13.12",
-    "expo-app-loading": "1.1.2"
+    "@react-native-masked-view/masked-view": "0.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
