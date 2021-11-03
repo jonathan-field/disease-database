@@ -9,7 +9,7 @@ export default function WelcomeScreen(props) {
     >
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require("../assets/logo-red.png")} />
-        <Text>Sell What You DON'T Need NOW!!!!</Text>
+        <Text>Sell What You Don't Need NOW</Text>
       </View>
       <View style={styles.loginButton}></View>
       <View style={styles.registerButton}></View>
