@@ -81,7 +81,7 @@ export default function LoginScreen(props) {
             style={styles.forgotpassword}
             onPress={() => Alert.alert("Forgot your password pressed")}
           >
-            Forgot your password? This is a test
+            Forgot your password?
           </Text>
           <Button
             style={{
