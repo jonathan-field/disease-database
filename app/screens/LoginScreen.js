@@ -19,7 +19,7 @@ const DismissKeyboard = ({ children }) => (
   </TouchableWithoutFeedback>
 );
 
-export default function LoginScreen(props) {
+export default function LoginScreen({ navigation }) {
   return (
     <DismissKeyboard>
       <View style={styles.container}>
@@ -151,7 +151,7 @@ export default function LoginScreen(props) {
               Don't have an account?{" "}
               <Text
                 style={styles.hyperlinktext}
-                onPress={() => Alert.alert("Sign up pressed")}
+                onPress={() => navigation.navigate("Sign-Up")}
               >
                 Sign up
               </Text>

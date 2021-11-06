@@ -7,7 +7,12 @@ import {
   WorkSans_700Bold,
   WorkSans_400Regular,
 } from "@expo-google-fonts/work-sans";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "./app/screens/LoginScreen";
+import RegisterScreen from "./app/screens/RegisterScreen";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -18,6 +23,13 @@ export default function App() {
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {
-    return <LoginScreen />;
+    return(
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Sign-In" component={LoginScreen} />
+          <Stack.Screen name="Sign-Up" component={RegisterScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
   }
 }
