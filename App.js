@@ -8,6 +8,7 @@ import {
   WorkSans_700Bold,
   WorkSans_400Regular,
 } from "@expo-google-fonts/work-sans";
+import { Inter_500Medium, Inter_600SemiBold } from "@expo-google-fonts/inter";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -25,6 +26,8 @@ export default function App() {
   let [fontsLoaded] = useFonts({
     WorkSans_700Bold,
     WorkSans_400Regular,
+    Inter_500Medium,
+    Inter_600SemiBold,
   });
 
   if (!fontsLoaded) {

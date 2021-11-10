@@ -154,7 +154,7 @@ export default function LoginScreen({ navigation }) {
             source={require("../assets/loginBackground.png")}
           />
         </View>
-        <StatusBar style="auto" />
+        <StatusBar style="light" />
       </View>
     </DismissKeyboard>
   );

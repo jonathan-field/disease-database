@@ -51,6 +51,9 @@ export default function LoginScreen({ navigation }) {
               ]}
               start={{ x: 0.6, y: 0 }}
               end={{ x: 0, y: 0 }}
+              useAngle={true}
+              angle={45}
+              angleCenter={{ x: 0.5, y: 0.5 }}
               style={{ flex: 1 }}
             />
           </MaskedView>
@@ -160,7 +163,7 @@ export default function LoginScreen({ navigation }) {
             source={require("../assets/loginBackground.png")}
           />
         </View>
-        <StatusBar style="auto" />
+        <StatusBar style="light" />
       </View>
     </DismissKeyboard>
   );
