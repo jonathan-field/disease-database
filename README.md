@@ -5,6 +5,7 @@ This is a mobile app with sign in / sign up functionality where users can learn 
 - expo install @react-native-masked-view/masked-view
 - expo install expo-app-loading 
 - expo install expo-font @expo-google-fonts/work-sans expo font
+- expo install @expo-google-fonts/inter
 - expo install expo-linear-gradient
 - expo install expo-status-bar
 - npm install react-native-paper 
