@@ -1,4 +1,5 @@
 import React from "react";
+import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   View,
@@ -7,6 +8,7 @@ import {
   Alert,
   Keyboard,
   TouchableWithoutFeedback,
+  TouchableOpacity,
 } from "react-native";
 import colors from "../config/colors";
 import { LinearGradient } from "expo-linear-gradient";
@@ -77,63 +79,57 @@ export default function LoginScreen({ navigation }) {
               },
             }}
           />
-          <Button
+          <TouchableOpacity
             style={{
               alignSelf: "center",
               width: 252.29,
               marginTop: 20,
               marginBottom: 6,
             }}
-            mode="contained"
-            onPress={() => Alert.alert("Log in with Email pressed")}
-            color="#9986F9"
-            dark
+            onPress={() => navigation.navigate("Main")}
           >
-            <Text style={{ fontFamily: "WorkSans_400Regular" }}>
-              Log in with Email
-            </Text>
-          </Button>
+            <Button mode="contained" color="#9986F9" dark>
+              <Text style={{ fontFamily: "WorkSans_400Regular" }}>
+                Log in with Email
+              </Text>
+            </Button>
+          </TouchableOpacity>
           <Text style={styles.or}>OR</Text>
-          <Button
-            icon="google"
+          <TouchableOpacity
             style={styles.button}
-            mode="contained"
             onPress={() => Alert.alert("Log in with Google pressed")}
-            color="#F5F5F5"
           >
-            <Text
-              style={{
-                fontFamily: "WorkSans_400Regular",
-                fontSize: 13,
-              }}
-            >
-              Log in with Google
-            </Text>
-          </Button>
-          <Button
-            icon="twitter"
+            <Button icon="google" mode="contained" color="#F5F5F5">
+              <Text
+                style={{
+                  fontFamily: "WorkSans_400Regular",
+                  fontSize: 13,
+                }}
+              >
+                Log in with Google
+              </Text>
+            </Button>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.button}
-            mode="contained"
             onPress={() => Alert.alert("Log in with Twitter pressed")}
-            color="#1DA1F2"
-            dark
           >
-            <Text style={{ fontFamily: "WorkSans_400Regular", fontSize: 13 }}>
-              Log in with Twitter
-            </Text>
-          </Button>
-          <Button
-            icon="facebook"
+            <Button icon="twitter" mode="contained" color="#1DA1F2" dark>
+              <Text style={{ fontFamily: "WorkSans_400Regular", fontSize: 13 }}>
+                Log in with Twitter
+              </Text>
+            </Button>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.button}
-            mode="contained"
             onPress={() => Alert.alert("Log in with Facebook pressed")}
-            color="#1877F2"
-            dark
           >
-            <Text style={{ fontFamily: "WorkSans_400Regular", fontSize: 13 }}>
-              Log in with Facebook
-            </Text>
-          </Button>
+            <Button icon="facebook" mode="contained" color="#1877F2" dark>
+              <Text style={{ fontFamily: "WorkSans_400Regular", fontSize: 13 }}>
+                Log in with Facebook
+              </Text>
+            </Button>
+          </TouchableOpacity>
           <View style={{ marginTop: 10 }}>
             <Text
               style={{
@@ -158,6 +154,7 @@ export default function LoginScreen({ navigation }) {
             source={require("../assets/loginBackground.png")}
           />
         </View>
+        <StatusBar style="auto" />
       </View>
     </DismissKeyboard>
   );
