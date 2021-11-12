@@ -171,7 +171,7 @@ export default function LoginScreen({ navigation }) {
                 style={styles.hyperlinktext}
                 onPress={() => navigation.navigate("Sign-In")}
               >
-                Sign up
+                Log in
               </Text>
             </Text>
           </View>
