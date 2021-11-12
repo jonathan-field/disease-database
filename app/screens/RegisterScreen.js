@@ -54,6 +54,34 @@ export default function LoginScreen({ navigation }) {
               style={{ flex: 1 }}
             />
           </MaskedView>
+          <View style={styles.nameContainer}>
+            <TextInput
+              onPress={Keyboard.dismiss}
+              style={styles.nameInput}
+              mode="outlined"
+              label="First Name"
+              theme={{
+                colors: {
+                  placeholder: "black",
+                  text: "black",
+                  primary: "black",
+                },
+              }}
+            />
+            <TextInput
+              onPress={Keyboard.dismiss}
+              style={styles.nameInput}
+              mode="outlined"
+              label="Last Name"
+              theme={{
+                colors: {
+                  placeholder: "black",
+                  text: "black",
+                  primary: "black",
+                },
+              }}
+            />
+          </View>
           <TextInput
             onPress={Keyboard.dismiss}
             style={styles.input}
@@ -138,7 +166,7 @@ export default function LoginScreen({ navigation }) {
                 alignSelf: "center",
               }}
             >
-              Don't have an account?{" "}
+              Have an account?{" "}
               <Text
                 style={styles.hyperlinktext}
                 onPress={() => navigation.navigate("Sign-In")}
@@ -184,7 +212,7 @@ const styles = StyleSheet.create({
     //backgroundColor: "#2D428D52",
     backgroundColor: "#F5F5F5",
     borderRadius: 20,
-    height: 500,
+    height: 600,
     width: 324,
   },
   title: {
@@ -195,9 +223,20 @@ const styles = StyleSheet.create({
     fontFamily: "WorkSans_700Bold",
     color: "#000000",
   },
+  nameContainer: {
+    flexDirection: "row",
+    width: "95%",
+    alignSelf: "center",
+  },
+  nameInput: {
+    height: 40,
+    margin: 4,
+    backgroundColor: "#fff",
+    flex: 1,
+  },
   input: {
     height: 40,
-    width: 271,
+    width: "92.45%",
     margin: 4,
     alignSelf: "center",
     backgroundColor: "#fff",
