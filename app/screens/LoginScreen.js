@@ -64,7 +64,7 @@ export default function LoginScreen({ navigation }) {
             label="Email"
             theme={{
               colors: {
-                placeholder: "black",
+                placeholder: "#676767",
                 text: "black",
                 primary: "black",
               },
@@ -76,7 +76,7 @@ export default function LoginScreen({ navigation }) {
             label="Password"
             theme={{
               colors: {
-                placeholder: "black",
+                placeholder: "#676767",
                 text: "black",
                 primary: "black",
               },
