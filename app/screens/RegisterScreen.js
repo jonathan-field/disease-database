@@ -107,6 +107,18 @@ export default function LoginScreen({ navigation }) {
               },
             }}
           />
+          <TextInput
+            style={styles.input}
+            mode="outlined"
+            label="Re-enter Password"
+            theme={{
+              colors: {
+                placeholder: "#676767",
+                text: "black",
+                primary: "black",
+              },
+            }}
+          />
           <TouchableOpacity
             style={{
               alignSelf: "center",
