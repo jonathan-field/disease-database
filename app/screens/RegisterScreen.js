@@ -62,7 +62,7 @@ export default function LoginScreen({ navigation }) {
               label="First Name"
               theme={{
                 colors: {
-                  placeholder: "black",
+                  placeholder: "#676767",
                   text: "black",
                   primary: "black",
                 },
@@ -75,7 +75,7 @@ export default function LoginScreen({ navigation }) {
               label="Last Name"
               theme={{
                 colors: {
-                  placeholder: "black",
+                  placeholder: "#676767",
                   text: "black",
                   primary: "black",
                 },
