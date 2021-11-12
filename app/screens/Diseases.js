@@ -7,6 +7,8 @@ import {
   SafeAreaView,
   SectionList,
   TouchableHighlight,
+  TouchableOpacity,
+  Alert,
 } from "react-native";
 import colors from "../config/colors";
 import { LinearGradient } from "expo-linear-gradient";
@@ -88,7 +90,13 @@ export default function ShopInfo(props) {
                   ],
                 },
               ]}
-              renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
+              renderItem={({ item }) => (
+                <TouchableOpacity
+                  onPress={() => Alert.alert("Disease touched")}
+                >
+                  <Text style={styles.item}>{item}</Text>
+                </TouchableOpacity>
+              )}
               renderSectionHeader={({ section }) => (
                 <Text style={styles.sectionHeader}>{section.title}</Text>
               )}
