@@ -49,6 +49,13 @@ export default function ShopInfo(props) {
             <Text style={styles.optionTitle}>Name</Text>
             <Entypo name="chevron-small-right" size={24} color="black" />
           </View>
+          <View
+            style={{
+              paddingTop: 10,
+              borderBottomColor: "#EBEBEB",
+              borderBottomWidth: 1,
+            }}
+          />
         </View>
       </View>
 
