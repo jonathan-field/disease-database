@@ -93,7 +93,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
-  optionTitle: {
-    justifyContent: "",
-  },
+  optionTitle: { marginRight: "auto", marginLeft: 10 },
 });
