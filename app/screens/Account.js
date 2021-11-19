@@ -1,10 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Alert } from "react-native";
 import colors from "../config/colors";
+import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import MaskedView from "@react-native-masked-view/masked-view";
+import { Searchbar } from "react-native-paper";
 
 export default function ShopInfo(props) {
+  const [searchQuery, setSearchQuery] = React.useState("");
+
+  const onChangeSearch = (query) => setSearchQuery(query);
+
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -16,7 +23,35 @@ export default function ShopInfo(props) {
         ]}
         style={styles.background}
       />
-      <View style={styles.contentBackground}></View>
+      <View style={styles.contentBackground}>
+        <MaskedView
+          maskElement={
+            <LinearGradient
+              colors={["black", "black", "transparent"]}
+              start={{ x: 0.5, y: 0.87 }}
+              style={{ flex: 1 }}
+            />
+          }
+        >
+          <View style={styles.contentBackground2}></View>
+        </MaskedView>
+        <View style={styles.accountIcon}>
+          <MaterialCommunityIcons
+            name="account-circle"
+            size={104}
+            color="#007AFF"
+          />
+          <Text style={{ fontSize: 20 }}>Timothy Smith</Text>
+        </View>
+        <View style={styles.optionsContent}>
+          <View style={styles.nameContainer}>
+            <MaterialCommunityIcons name="account-circle-outline" size={44} />
+            <Text style={styles.optionTitle}>Name</Text>
+            <Entypo name="chevron-small-right" size={24} color="black" />
+          </View>
+        </View>
+      </View>
+
       <StatusBar style="light" />
     </View>
   );
@@ -43,5 +78,22 @@ const styles = StyleSheet.create({
     height: 500,
     width: "95%",
     height: "93%",
+  },
+  accountIcon: {
+    alignItems: "center",
+    marginTop: 35,
+    marginBottom: 70,
+  },
+  optionsContent: {
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  nameContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  optionTitle: {
+    justifyContent: "",
   },
 });
