@@ -49,13 +49,6 @@ export default function ShopInfo(props) {
             <Text style={styles.optionTitle}>Name</Text>
             <Entypo name="chevron-small-right" size={24} color="black" />
           </View>
-          <View
-            style={{
-              paddingTop: 10,
-              borderBottomColor: "#EBEBEB",
-              borderBottomWidth: 1,
-            }}
-          />
         </View>
       </View>
 
@@ -99,6 +92,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    borderBottomColor: "#EBEBEB",
+    borderBottomWidth: 1,
+    paddingBottom: 10,
   },
   optionTitle: { marginRight: "auto", marginLeft: 10 },
 });
