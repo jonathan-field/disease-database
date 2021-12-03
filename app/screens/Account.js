@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, SafeAreaView, Alert } from "react-native";
 import colors from "../config/colors";
 import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import MaskedView from "@react-native-masked-view/masked-view";
 import { Searchbar } from "react-native-paper";
@@ -45,8 +47,29 @@ export default function ShopInfo(props) {
         </View>
         <View style={styles.optionsContent}>
           <View style={styles.nameContainer}>
-            <MaterialCommunityIcons name="account-circle-outline" size={44} />
+            <MaterialCommunityIcons name="account-circle-outline" size={42} />
             <Text style={styles.optionTitle}>Name</Text>
+            <Entypo name="chevron-small-right" size={24} color="black" />
+          </View>
+        </View>
+        <View style={styles.optionsContent}>
+          <View style={styles.emailContainer}>
+            <AntDesign name="mail" size={35} color="black" />
+            <Text style={styles.optionTitle}>Email</Text>
+            <Entypo name="chevron-small-right" size={24} color="black" />
+          </View>
+        </View>
+        <View style={styles.optionsContent}>
+          <View style={styles.passwordContainer}>
+            <Entypo name="key" size={35} color="black" />
+            <Text style={styles.optionTitle}>Password</Text>
+            <Entypo name="chevron-small-right" size={24} color="black" />
+          </View>
+        </View>
+        <View style={styles.optionsContent}>
+          <View style={styles.pushNotificationsContainer}>
+            <FontAwesome name="bell" size={35} color="black" />
+            <Text style={styles.optionTitle}>Push Notifications</Text>
             <Entypo name="chevron-small-right" size={24} color="black" />
           </View>
         </View>
@@ -94,6 +117,48 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     borderBottomColor: "#EBEBEB",
     borderBottomWidth: 1,
+    paddingBottom: 10,
+  },
+  optionsContent: {
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  emailContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderBottomColor: "#EBEBEB",
+    borderBottomWidth: 1,
+    paddingLeft: 5,
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+  optionsContent: {
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  passwordContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderBottomColor: "#EBEBEB",
+    borderBottomWidth: 1,
+    paddingLeft: 5,
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+  optionsContent: {
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  pushNotificationsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderBottomColor: "#EBEBEB",
+    borderBottomWidth: 1,
+    paddingLeft: 5,
+    paddingTop: 10,
     paddingBottom: 10,
   },
   optionTitle: { marginRight: "auto", marginLeft: 10 },
