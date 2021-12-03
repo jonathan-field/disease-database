@@ -17,7 +17,7 @@ import RegisterScreen from "./app/screens/RegisterScreen";
 import Account from "./app/screens/Account";
 import Diseases from "./app/screens/Diseases";
 import Teleconference from "./app/screens/Teleconference";
-
+// hellloooo
 const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
