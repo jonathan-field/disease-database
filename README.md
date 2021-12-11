@@ -14,3 +14,4 @@ This is a mobile app with sign in / sign up functionality where users can learn 
 - npm install @react-navigation/bottom-tabs
 - npm install @react-navigation/native
 - npm install @react-navigation/native-stack
+- npm install --save react-native-collapsible
