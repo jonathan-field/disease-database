@@ -1,83 +1,106 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Component } from "react";
-import { StyleSheet, Text, View, SafeAreaView, Alert } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Alert,
+  TouchableOpacity,
+} from "react-native";
 import colors from "../config/colors";
 import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import MaskedView from "@react-native-masked-view/masked-view";
 import { Searchbar } from "react-native-paper";
+import ProfileNameChange from "./ProfileNameChange";
+import ProfileEmailChange from "./ProfileEmailChange";
+import ProfilePasswordChange from "./ProfilePasswordChange";
+import { NavigationContainer, StackActions } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+const Stack = createNativeStackNavigator();
+global.name = name;
 export default function ShopInfo(props) {
-  const [searchQuery, setSearchQuery] = React.useState("");
-
-  const onChangeSearch = (query) => setSearchQuery(query);
-
   return (
-    <View style={styles.container}>
-      <LinearGradient
-        // Background Linear Gradient
-        colors={[
-          colors.backgroundtop,
-          colors.backgroundmiddle,
-          colors.backgroundbottom,
-        ]}
-        style={styles.background}
-      />
-      <View style={styles.contentBackground}>
-        <MaskedView
-          maskElement={
-            <LinearGradient
-              colors={["black", "black", "transparent"]}
-              start={{ x: 0.5, y: 0.87 }}
-              style={{ flex: 1 }}
-            />
-          }
-        >
-          <View style={styles.contentBackground2}></View>
-        </MaskedView>
-        <View style={styles.accountIcon}>
-          <MaterialCommunityIcons
-            name="account-circle"
-            size={104}
-            color="#007AFF"
-          />
-          <Text style={{ fontSize: 20 }}>Timothy Smith</Text>
-        </View>
-        <View style={styles.optionsContent}>
-          <View style={styles.nameContainer}>
-            <MaterialCommunityIcons name="account-circle-outline" size={42} />
-            <Text style={styles.optionTitle}>Name</Text>
-            <Entypo name="chevron-small-right" size={24} color="black" />
-          </View>
-        </View>
-        <View style={styles.optionsContent}>
-          <View style={styles.emailContainer}>
-            <AntDesign name="mail" size={35} color="black" />
-            <Text style={styles.optionTitle}>Email</Text>
-            <Entypo name="chevron-small-right" size={24} color="black" />
-          </View>
-        </View>
-        <View style={styles.optionsContent}>
-          <View style={styles.passwordContainer}>
-            <Entypo name="key" size={35} color="black" />
-            <Text style={styles.optionTitle}>Password</Text>
-            <Entypo name="chevron-small-right" size={24} color="black" />
-          </View>
-        </View>
-        <View style={styles.optionsContent}>
-          <View style={styles.pushNotificationsContainer}>
-            <FontAwesome name="bell" size={35} color="black" />
-            <Text style={styles.optionTitle}>Push Notifications</Text>
-            <Entypo name="chevron-small-right" size={24} color="black" />
-          </View>
-        </View>
-      </View>
-
-      <StatusBar style="light" />
-    </View>
+    <NavigationContainer independent={true}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="ProfileHome" component={mainProfile} />
+        <Stack.Screen name="NameChange" component={ProfileNameChange} />
+        <Stack.Screen name="EmailChange" component={ProfileEmailChange} />
+        <Stack.Screen name="PasswordChange" component={ProfilePasswordChange} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
+
+  function mainProfile({ navigation }) {
+    return (
+      <View style={styles.container}>
+        <LinearGradient
+          // Background Linear Gradient
+          colors={[
+            colors.backgroundtop,
+            colors.backgroundmiddle,
+            colors.backgroundbottom,
+          ]}
+          style={styles.background}
+        />
+        <View style={styles.contentBackground}>
+          <MaskedView
+            maskElement={
+              <LinearGradient
+                colors={["black", "black", "transparent"]}
+                start={{ x: 0.5, y: 0.87 }}
+                style={{ flex: 1 }}
+              />
+            }
+          ></MaskedView>
+          <View style={styles.accountIcon}>
+            <MaterialCommunityIcons
+              name="account-circle"
+              size={104}
+              color="#007AFF"
+            />
+            <Text style={{ fontSize: 20 }}>Timothy Smith</Text>
+          </View>
+          <TouchableOpacity
+            style={styles.optionsContent}
+            onPress={() => navigation.navigate("NameChange")}
+          >
+            <View style={styles.nameContainer}>
+              <Ionicons name="md-person-circle" size={39} color="black" />
+              <Text style={styles.nameTitle}>Name</Text>
+              <Entypo name="chevron-small-right" size={24} color="black" />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.optionsContent}
+            onPress={() => navigation.navigate("EmailChange")}
+          >
+            <View style={styles.emailContainer}>
+              <Ionicons name="md-mail-sharp" size={35} color="black" />
+              <Text style={styles.optionTitle}>Email</Text>
+              <Entypo name="chevron-small-right" size={24} color="black" />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.optionsContent}
+            onPress={() => navigation.navigate("PasswordChange")}
+          >
+            <View style={styles.passwordContainer}>
+              <Entypo name="key" size={35} color="black" />
+              <Text style={styles.optionTitle}>Password</Text>
+              <Entypo name="chevron-small-right" size={24} color="black" />
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <StatusBar style="light" />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -117,6 +140,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     borderBottomColor: "#EBEBEB",
     borderBottomWidth: 1,
+    paddingLeft: 5,
+    paddingTop: 10,
     paddingBottom: 10,
   },
   optionsContent: {
@@ -162,4 +187,5 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   optionTitle: { marginRight: "auto", marginLeft: 10 },
+  nameTitle: { marginRight: "auto", marginLeft: 6 },
 });

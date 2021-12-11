@@ -1,11 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import colors from "../config/colors";
 import { LinearGradient } from "expo-linear-gradient";
+import { FontAwesome5 } from "@expo/vector-icons";
+//import Collapsible from "react-native-collapsible";
 
-export default function DiseaseScreen(route, navigation) {
-  const { summary } = route.route.params;
+export default function DiseaseScreen({ route, navigation }) {
+  const { title, summary } = route.params;
 
   return (
     <View style={styles.container}>
@@ -19,8 +21,24 @@ export default function DiseaseScreen(route, navigation) {
         style={styles.background}
       />
       <View style={styles.contentBackground}>
-        <Text>Hello and Welcome to the disease screen!</Text>
-        <Text>Summary: {JSON.stringify(summary)}</Text>
+        <View style={styles.topRectangle}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("DiseaseHome")}
+            style={styles.backButton}
+          >
+            <FontAwesome5
+              style={styles.arrow}
+              name="chevron-left"
+              size={22}
+              color="#A289FF"
+            />
+          </TouchableOpacity>
+          <Text style={styles.titleText}>{title}</Text>
+        </View>
+        <View style={styles.border}>
+          <Text style={styles.summaryTitle}>Summary</Text>
+        </View>
+        <Text>{summary}</Text>
       </View>
       <StatusBar style="light" />
     </View>
@@ -43,10 +61,37 @@ const styles = StyleSheet.create({
   },
   contentBackground: {
     marginTop: 43,
+    padding: 20,
     backgroundColor: "#FFF",
     borderRadius: 10,
     height: 500,
     width: "95%",
     height: "93%",
+  },
+  titleText: {
+    fontSize: 29,
+    color: "#A289FF",
+  },
+  arrow: {
+    width: 24,
+  },
+  backButton: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  topRectangle: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  summaryTitle: {
+    fontSize: 26,
+    color: "#434343",
+  },
+  border: {
+    paddingBottom: 3,
+    marginBottom: 10,
+    borderBottomColor: "#A289FF",
+    borderBottomWidth: 1,
   },
 });

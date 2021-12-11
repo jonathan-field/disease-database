@@ -126,7 +126,7 @@ export default function LoginScreen({ navigation }) {
               marginTop: 20,
               marginBottom: 6,
             }}
-            onPress={() => navigation.navigate("Main")}
+            onPress={() => navigation.navigate("Main", { screen: "Diseases" })}
           >
             <Button mode="contained" color="#9986F9" dark>
               <Text style={{ fontFamily: "WorkSans_400Regular" }}>

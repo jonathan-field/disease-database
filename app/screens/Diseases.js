@@ -20,7 +20,7 @@ import { Searchbar } from "react-native-paper";
 
 const Stack = createNativeStackNavigator();
 
-export default function ShopInfo(props) {
+export default function Diseases(props) {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -39,7 +39,7 @@ export default function ShopInfo(props) {
       {
         title: "A",
         data: [
-          "Acute Flaccid Myelitis (AFM)",
+          "Acute Flaccid Myelitis",
           "AIDS (HIV/AIDS)",
           "Alphaviruses",
           "Alzheimer’s Disease",
@@ -156,6 +156,7 @@ export default function ShopInfo(props) {
                       //     ].info[0].summary[index]
                       // ),
                       navigation.navigate("DiseaseScreen", {
+                        title: item,
                         summary:
                           DISEASES[
                             DISEASES.findIndex(function (disease) {
