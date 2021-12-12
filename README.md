@@ -2,7 +2,7 @@
 
 This is a mobile app where users can learn a multitude of diseases.
 
-Features in development
+## Features in development
 - Sign in / sign up functionality
 - Taking notes on diseases
 - Teleconference features
