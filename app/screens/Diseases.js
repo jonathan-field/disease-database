@@ -125,7 +125,7 @@ export default function Diseases(props) {
             }
           >
             <View style={styles.contentBackground2}>
-              <Searchbar
+              {/* <Searchbar
                 placeholder="Search"
                 onChangeText={onChangeSearch}
                 value={searchQuery}
@@ -137,7 +137,7 @@ export default function Diseases(props) {
                   },
                 }}
                 style={styles.searchBar}
-              />
+              /> */}
               <SectionList
                 style={styles.sectionList}
                 sections={DISEASES}
@@ -254,6 +254,8 @@ const styles = StyleSheet.create({
   sectionList: {
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
   },
   sectionHeader: {
     paddingTop: 2,

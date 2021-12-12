@@ -22,7 +22,7 @@ import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
-global.name = name;
+
 export default function ShopInfo(props) {
   return (
     <NavigationContainer independent={true}>

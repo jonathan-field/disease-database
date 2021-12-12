@@ -14,6 +14,7 @@ import colors from "../config/colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { TextInput, Button } from "react-native-paper";
 import MaskedView from "@react-native-masked-view/masked-view";
+import { Ionicons } from "@expo/vector-icons";
 
 const DismissKeyboard = ({ children }) => (
   <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -22,6 +23,16 @@ const DismissKeyboard = ({ children }) => (
 );
 
 export default function LoginScreen({ navigation }) {
+  const [isSecureEntry, changeIsSecureEntry] = React.useState(true);
+
+  function eyeState() {
+    if (isSecureEntry == true) {
+      return <Ionicons name="eye" size={24} color="black" />;
+    } else if (isSecureEntry == false) {
+      return <Ionicons name="eye-off" size={24} color="black" />;
+    }
+  }
+
   return (
     <DismissKeyboard>
       <View style={styles.container}>
@@ -70,18 +81,29 @@ export default function LoginScreen({ navigation }) {
               },
             }}
           />
-          <TextInput
-            style={styles.input}
-            mode="outlined"
-            label="Password"
-            theme={{
-              colors: {
-                placeholder: "#676767",
-                text: "black",
-                primary: "black",
-              },
-            }}
-          />
+          <View>
+            <TextInput
+              style={styles.input}
+              secureTextEntry={isSecureEntry}
+              mode="outlined"
+              label="Password"
+              theme={{
+                colors: {
+                  placeholder: "#676767",
+                  text: "black",
+                  primary: "black",
+                },
+              }}
+            />
+            <TouchableOpacity
+              onPress={() => {
+                changeIsSecureEntry((prev) => !prev);
+              }}
+              style={styles.eyeContainer}
+            >
+              {eyeState()}
+            </TouchableOpacity>
+          </View>
           <Text
             style={styles.forgotpassword}
             onPress={() => Alert.alert("Forgot your password pressed")}
@@ -170,6 +192,15 @@ export default function LoginScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  eyeContainer: {
+    position: "absolute",
+    height: "40%",
+    width: "10%",
+    top: 18,
+    right: 18,
+    zIndex: 300,
+    backgroundColor: "#FFF",
+  },
   container: {
     flex: 1,
     alignItems: "center",
@@ -207,6 +238,7 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     width: 271,
+    lineHeight: 40,
     margin: 4,
     alignSelf: "center",
     backgroundColor: "#fff",

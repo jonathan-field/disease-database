@@ -86,7 +86,7 @@ function Main() {
           tabBarInactiveTintColor: "gray",
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Teleconference"
         component={Teleconference}
         options={{
@@ -99,7 +99,7 @@ function Main() {
           },
           tabBarInactiveTintColor: "gray",
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }
