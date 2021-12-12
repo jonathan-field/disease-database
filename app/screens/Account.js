@@ -15,19 +15,28 @@ import { FontAwesome } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import MaskedView from "@react-native-masked-view/masked-view";
 import { Searchbar } from "react-native-paper";
+import mainProfile2 from "./AccountWithName";
 import ProfileNameChange from "./ProfileNameChange";
 import ProfileEmailChange from "./ProfileEmailChange";
 import ProfilePasswordChange from "./ProfilePasswordChange";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {
+  createNativeStackNavigator,
+  CardStyleInterpolators,
+} from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 
 export default function ShopInfo(props) {
   return (
     <NavigationContainer independent={true}>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
         <Stack.Screen name="ProfileHome" component={mainProfile} />
+        <Stack.Screen name="ProfileHome2" component={mainProfile2} />
         <Stack.Screen name="NameChange" component={ProfileNameChange} />
         <Stack.Screen name="EmailChange" component={ProfileEmailChange} />
         <Stack.Screen name="PasswordChange" component={ProfilePasswordChange} />
@@ -35,7 +44,9 @@ export default function ShopInfo(props) {
     </NavigationContainer>
   );
 
-  function mainProfile({ navigation }) {
+  function mainProfile({ route, navigation }) {
+    //const { name } = route.params;
+
     return (
       <View style={styles.container}>
         <LinearGradient

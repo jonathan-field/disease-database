@@ -38,6 +38,7 @@ export default function ProfileNameChange({ navigation }) {
   });
 
   function inputFirstNameChanged(text) {
+    console.log("Name is: " + text);
     /*change the state of the credentials to the name you typed*/
     setFormInput({
       ...formInput,
@@ -98,6 +99,11 @@ export default function ProfileNameChange({ navigation }) {
     }
   }
 
+  function reset() {
+    Alert.alert("Name change successful!");
+    setFormInput({ ...formInput, firstName: "", lastName: "" });
+  }
+
   return (
     <DismissKeyboard>
       <View style={styles.container}>
@@ -113,7 +119,11 @@ export default function ProfileNameChange({ navigation }) {
         <View style={styles.contentBackground}>
           <View style={styles.topRectangle}>
             <TouchableOpacity
-              onPress={() => navigation.navigate("ProfileHome")}
+              onPress={() => {
+                navigation.navigate("ProfileHome2", {
+                  name: "Drew Smith",
+                });
+              }}
               style={styles.backButton}
             >
               <FontAwesome5 name="chevron-left" size={22} color="#A289FF" />
@@ -161,7 +171,8 @@ export default function ProfileNameChange({ navigation }) {
             </View>
             <TouchableOpacity
               //onPress={() => verifyPassword(passwordInput)}
-              onPress={() => Alert.alert("Name change successful!")}
+              onPress={() => reset()}
+              //onPress={() => Alert.alert("Name change successful!")}
               style={styles.signUpButton}
             >
               <Text

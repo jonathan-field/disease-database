@@ -48,11 +48,32 @@ export default function Diseases(props) {
         info: [
           {
             summary: [
-              "Acute Flaccid Myelitis (AFM) is bad",
+              "Polio and acute flaccid myelitis (AFM) are illnesses that cause muscle weakness and paralysis (when you’re not able to move). They both typically affect children. Polio is a viral infection that paralyzed more than 15,000 people in the U.S. each year -- mostly children -- in the early 1950s. It’s been wiped out in this country thanks to a vaccine, but it's still a problem in some places, including Nigeria, New Guinea, and Somalia. Doctors don’t know exactly what causes AFM, but many cases seem to be brought on by a viral infection, too. (Researchers aren’t sure how the virus triggers it.) There’s been a small outbreak in the U.S. in recent years, but it’s still very rare. Fewer than 1 in a million children in the U.S. get the disease each year.",
               "AIDS (HIV/AIDS) is not preferrable",
               "Alphaviruses are the worse",
               "Alzheimer’s Disease makes you forget",
               "Arboviral Encephalitis is viral!",
+            ],
+            symptoms: [
+              "AFM causes sudden weakness in your arms and legs, along with a loss of muscle tone and sometimes pain. Your face may also feel weak. These symptoms are usually preceded by a runny nose, cough, and congestion. Other symptoms of AFM include:\n- Drooping eyelids and trouble moving your eyes\n- A hard time swallowing or speaking\n- Slurred speech\n- Trouble breathing",
+              "AIDS (HIV/AIDS) is not preferrable",
+              "Alphaviruses are the worse",
+              "Alzheimer’s Disease makes you forget",
+              "Arboviral Encephalitis is viral!",
+            ],
+            equipment: [
+              "There’s no cure for either polio or AFM, but some things can help with symptoms. Children with either polio or AFM may need:\n- Pain relievers like ibuprofen to ease pain and bring down fever\n- Fluids to keep them from being dehydrated\n- A machine called a ventilator to help them breathe Physical therapy to make weak muscles stronger\n- Occupational therapy to help with everyday activities like dressing and eating",
+              "Tubes of water",
+              "Hairbrush for hair",
+              "Clock to remember the time",
+              "A cup of coffee",
+            ],
+            relatedDiseases: [
+              "- Polio",
+              "Other sexual diseases",
+              "COVID-19",
+              "Dementia",
+              "VIRAL diseases",
             ],
           },
         ],
@@ -77,6 +98,20 @@ export default function Diseases(props) {
               "Bird Flu spreads like the Flu!",
               "No place is safe if there is Blue-green Algae",
             ],
+            equipment: [
+              "Needle, hairpin",
+              "Tubes of water",
+              "Hairbrush for hair",
+              "Clock to remember the time",
+              "A cup of coffee",
+            ],
+            relatedDiseases: [
+              "Germs and gunk",
+              "Other sexual diseases",
+              "COVID-19",
+              "Dementia",
+              "VIRAL diseases",
+            ],
           },
         ],
       },
@@ -87,6 +122,31 @@ export default function Diseases(props) {
           "Cancer - Bladder",
           "Cancer - Breast",
           "Cancer - Cervical",
+        ],
+        info: [
+          {
+            summary: [
+              "Acute Flaccid Myelitis (AFM) is bad",
+              "AIDS (HIV/AIDS) is not preferrable",
+              "Alphaviruses are the worse",
+              "Alzheimer’s Disease makes you forget",
+              "Arboviral Encephalitis is viral!",
+            ],
+            equipment: [
+              "Needle, hairpin",
+              "Tubes of water",
+              "Hairbrush for hair",
+              "Clock to remember the time",
+              "A cup of coffee",
+            ],
+            relatedDiseases: [
+              "Germs and gunk",
+              "Other sexual diseases",
+              "COVID-19",
+              "Dementia",
+              "VIRAL diseases",
+            ],
+          },
         ],
       },
     ];
@@ -163,6 +223,24 @@ export default function Diseases(props) {
                               return disease.title === section.title;
                             })
                           ].info[0].summary[index],
+                        equipment:
+                          DISEASES[
+                            DISEASES.findIndex(function (disease) {
+                              return disease.title === section.title;
+                            })
+                          ].info[0].equipment[index],
+                        relatedDiseases:
+                          DISEASES[
+                            DISEASES.findIndex(function (disease) {
+                              return disease.title === section.title;
+                            })
+                          ].info[0].relatedDiseases[index],
+                        symptoms:
+                          DISEASES[
+                            DISEASES.findIndex(function (disease) {
+                              return disease.title === section.title;
+                            })
+                          ].info[0].symptoms[index],
                       });
                       // console.log(
                       //   "Disease title index is: " +
