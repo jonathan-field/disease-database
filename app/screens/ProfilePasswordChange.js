@@ -204,6 +204,7 @@ export default function ProfilePasswordChange({ navigation }) {
               // onPress={() =>
               //   verifyPassword(currentPasswordInput, reEnterPasswordInput)
               // }
+              onPress={() => Alert.alert("Password change successful!")}
               style={styles.signUpButton}
             >
               <Text

@@ -61,7 +61,7 @@ export default function ShopInfo(props) {
             <MaterialCommunityIcons
               name="account-circle"
               size={104}
-              color="#007AFF"
+              color="#474747"
             />
             <Text style={{ fontSize: 20 }}>Timothy Smith</Text>
           </View>
@@ -70,7 +70,7 @@ export default function ShopInfo(props) {
             onPress={() => navigation.navigate("NameChange")}
           >
             <View style={styles.nameContainer}>
-              <Ionicons name="md-person-circle" size={39} color="black" />
+              <Ionicons name="md-person-circle" size={39} color="#474747" />
               <Text style={styles.nameTitle}>Name</Text>
               <Entypo name="chevron-small-right" size={24} color="black" />
             </View>
@@ -80,7 +80,7 @@ export default function ShopInfo(props) {
             onPress={() => navigation.navigate("EmailChange")}
           >
             <View style={styles.emailContainer}>
-              <Ionicons name="md-mail-sharp" size={35} color="black" />
+              <Ionicons name="md-mail-sharp" size={35} color="#474747" />
               <Text style={styles.optionTitle}>Email</Text>
               <Entypo name="chevron-small-right" size={24} color="black" />
             </View>
@@ -90,7 +90,7 @@ export default function ShopInfo(props) {
             onPress={() => navigation.navigate("PasswordChange")}
           >
             <View style={styles.passwordContainer}>
-              <Entypo name="key" size={35} color="black" />
+              <Entypo name="key" size={35} color="#474747" />
               <Text style={styles.optionTitle}>Password</Text>
               <Entypo name="chevron-small-right" size={24} color="black" />
             </View>

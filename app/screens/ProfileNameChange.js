@@ -161,6 +161,7 @@ export default function ProfileNameChange({ navigation }) {
             </View>
             <TouchableOpacity
               //onPress={() => verifyPassword(passwordInput)}
+              onPress={() => Alert.alert("Name change successful!")}
               style={styles.signUpButton}
             >
               <Text

@@ -138,6 +138,7 @@ export default function ProfileEmailChange({ navigation }) {
             </View>
             <TouchableOpacity
               //onPress={() => verifyPassword(passwordInput)}
+              onPress={() => Alert.alert("Email change successful!")}
               style={styles.signUpButton}
             >
               <Text
