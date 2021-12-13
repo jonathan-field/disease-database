@@ -1,6 +1,11 @@
 # Disease Database
 
-This is a mobile app with sign in / sign up functionality where users can learn and take notes on a multitude of diseases as well as teleconference and message instructors
+This is a mobile app where users can learn a multitude of diseases.
+
+## Features in development
+- Sign in / sign up functionality
+- Taking notes on diseases
+- Teleconference features
 
 # Dependencies for Front End
 
