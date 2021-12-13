@@ -118,18 +118,41 @@ export default function ProfileNameChange({ navigation }) {
         />
         <View style={styles.contentBackground}>
           <View style={styles.topRectangle}>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate("ProfileHome2", {
-                  name: "Drew Smith",
-                });
-              }}
-              style={styles.backButton}
-            >
-              <FontAwesome5 name="chevron-left" size={22} color="#A289FF" />
-              <Text style={styles.backText}>Back</Text>
-            </TouchableOpacity>
-            <Text style={styles.headerText}>Name</Text>
+            {formInput.firstName == "" ? (
+              <View>
+                <Text style={styles.headerText}>Name</Text>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("ProfileHome2", {
+                      name: "Drew Smith",
+                    });
+                  }}
+                  style={styles.backButton}
+                >
+                  <FontAwesome5 name="chevron-left" size={22} color="#A289FF" />
+                  <Text style={styles.backText}>Back</Text>
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("ProfileHome2", {
+                      name: "Drew Smith",
+                    });
+                  }}
+                  style={styles.saveButton}
+                >
+                  <Text style={styles.saveText}>Save</Text>
+                  <FontAwesome5
+                    name="chevron-right"
+                    size={22}
+                    color="#A289FF"
+                  />
+                </TouchableOpacity>
+                <Text style={styles.headerText}>Name</Text>
+              </View>
+            )}
           </View>
           <View style={styles.content}>
             <TextInput
@@ -226,7 +249,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     position: "absolute",
-    left: 20,
+    right: 135,
+    bottom: 7,
+  },
+  saveText: {
+    fontSize: 17,
+    color: "#A289FF",
+    paddingRight: 6,
+  },
+  saveButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    position: "absolute",
+    left: 135,
     bottom: 7,
   },
   headerText: {
