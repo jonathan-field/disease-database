@@ -101,7 +101,6 @@ export default function ProfileNameChange({ navigation }) {
 
   function reset() {
     Alert.alert("Name change successful!");
-    setFormInput({ ...formInput, firstName: "", lastName: "" });
   }
 
   return (
@@ -123,9 +122,7 @@ export default function ProfileNameChange({ navigation }) {
                 <Text style={styles.headerText}>Name</Text>
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate("ProfileHome2", {
-                      name: "Drew Smith",
-                    });
+                    navigation.navigate("ProfileHome");
                   }}
                   style={styles.backButton}
                 >
@@ -143,7 +140,7 @@ export default function ProfileNameChange({ navigation }) {
                   }}
                   style={styles.saveButton}
                 >
-                  <Text style={styles.saveText}>Save</Text>
+                  <Text style={styles.saveText}>Confirm</Text>
                   <FontAwesome5
                     name="chevron-right"
                     size={22}
@@ -261,7 +258,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     position: "absolute",
-    left: 135,
+    left: 115,
     bottom: 7,
   },
   headerText: {
@@ -300,7 +297,7 @@ const styles = StyleSheet.create({
     top: 22,
     right: 6,
     zIndex: 300,
-    backgroundColor: "#F4FEFF",
+    backgroundColor: "#FCFCFC",
   },
   signUpButton: {
     height: 45,

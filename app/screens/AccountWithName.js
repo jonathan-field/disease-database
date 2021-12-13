@@ -77,6 +77,11 @@ export default function mainProfile2({ route, navigation }) {
             <Entypo name="chevron-small-right" size={24} color="black" />
           </View>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.signUpButton}>
+          <Text style={{ fontSize: 20, color: "#fff", textAlign: "center" }}>
+            Sign out
+          </Text>
+        </TouchableOpacity>
       </View>
 
       <StatusBar style="light" />
@@ -169,4 +174,18 @@ const styles = StyleSheet.create({
   },
   optionTitle: { marginRight: "auto", marginLeft: 10 },
   nameTitle: { marginRight: "auto", marginLeft: 6 },
+  signUpButton: {
+    height: 45,
+    width: 180,
+    backgroundColor: "#9986F9",
+    borderRadius: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
+    alignSelf: "center",
+    justifyContent: "center",
+    marginTop: 190,
+  },
 });
