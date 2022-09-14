@@ -21,3 +21,6 @@ This is a mobile app where users can learn a multitude of diseases.
 - npm install @react-navigation/native
 - npm install @react-navigation/native-stack
 - npm install --save react-native-collapsible
+
+# App showcase
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gZSCEn2q-5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
