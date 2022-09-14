@@ -23,4 +23,4 @@ This is a mobile app where users can learn a multitude of diseases.
 - npm install --save react-native-collapsible
 
 # App showcase
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gZSCEn2q-5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![disease-database](https://img.youtube.com/vi/gZSCEn2q-5U/0.jpg)](https://www.youtube.com/watch?v=gZSCEn2q-5U)
